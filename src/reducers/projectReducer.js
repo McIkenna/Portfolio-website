@@ -4,6 +4,7 @@ import { DELETE_PROJECT, GET_PROJECT, GET_PROJECTS} from "../actions/types";
 const initialState = {
     projects: [], 
     project: {},
+    loading: true
    
 }
 
@@ -12,13 +13,15 @@ export default function(state = initialState, action){
         case GET_PROJECTS:
             return{
                 ...state,
-                projects: action.payload
+                projects: action.payload,
+                loading: false
             };
 
         case GET_PROJECT:
             return{
                 ...state,
-                project: action.payload
+                project: action.payload,
+                loading: false
             }
 
         case DELETE_PROJECT:

@@ -2,7 +2,8 @@ import { DELETE_WORK, GET_WORK, GET_WORKS } from "../actions/types";
 
 const initialState = {
     works: [],
-    work: {}
+    work: {},
+    loading: true
 }
 
 export default function(state=initialState, action){
@@ -11,13 +12,15 @@ export default function(state=initialState, action){
         case GET_WORKS:
             return{
                 ...state,
-                works: action.payload
+                works: action.payload,
+                loading: false
             }
 
         case GET_WORK:
             return{
                 ...state,
-                work: action.payload
+                work: action.payload,
+                loading: false
             }
 
         case DELETE_WORK:

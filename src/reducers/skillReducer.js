@@ -3,7 +3,8 @@ import { DELETE_SKILL, GET_SKILLS, GET_SKILL } from "../actions/types";
 
 const initialState = {
     skills: [],
-    skill: {}
+    skill: {},
+    loading: false
 }
 
 export default function(state=initialState, action){
@@ -11,12 +12,14 @@ export default function(state=initialState, action){
         case GET_SKILLS:
             return{
                 ...state,
-                skills: action.payload
+                skills: action.payload,
+                loading: false
             };
         case GET_SKILL:
             return{
                 ...state,
-                skill: action.payload
+                skill: action.payload,
+                loading: false
             };
         case DELETE_SKILL:
             return{

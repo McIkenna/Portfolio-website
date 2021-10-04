@@ -394,3 +394,16 @@ input[type="submit"]:hover {
     padding: 10px 0;
   }
 }
+
+
+@media screen and (max-width: 500px) {
+  .aboutcontainer {
+    
+    padding: 5% 5%;
+    height: 40vh;
+  }
+
+  .abouttext p:nth-child(1) {
+    font-size: 1rem;
+  }
+}

@@ -33,8 +33,6 @@ class Dashboard extends Component {
     this.props.getWorks();
     this.props.getProjects();
     this.props.getSkills();
-   
-    this.timerHandle = setTimeout(() => this.setState({ loading: false }), 2000); 
   }
 
 
@@ -44,7 +42,7 @@ class Dashboard extends Component {
       let {infos} = this.props.info
       let {educations} = this.props.education
       let {works} = this.props.work
-      let {projects} = this.props.project
+      let {projects, loading} = this.props.project
       let {skills} = this.props.skill
      // let {tasks} = this.props.task
       
@@ -54,7 +52,7 @@ class Dashboard extends Component {
 
   return (
 
-    this.state.loading ? <Spinner/> : (
+    loading ? <Spinner/> : (
  
 <div className={styles.body}>
 <div className = {styles.dashbody}>
